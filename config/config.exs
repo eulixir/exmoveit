@@ -8,7 +8,8 @@
 use Mix.Config
 
 config :exmoveit,
-  ecto_repos: [Exmoveit.Repo]
+  ecto_repos: [Exmoveit.Repo],
+  generators: [binary_id: true]
 
 # Configures the endpoint
 config :exmoveit, ExmoveitWeb.Endpoint,
