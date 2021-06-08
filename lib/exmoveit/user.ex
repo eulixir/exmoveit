@@ -11,10 +11,6 @@ defmodule Exmoveit.User do
   end
 
   @doc false
-  def changeset(%{} = attrs) do
-    changeset(%__MODULE__{}, attrs)
-  end
-
   def changeset(user, attrs) do
     user
     |> cast(attrs, [:email])
