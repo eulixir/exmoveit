@@ -5,7 +5,6 @@ defmodule Exmoveit.Users.Create do
 
   alias Exmoveit.{Repo, User}
 
-  @spec call(%{email: String.t()}) :: {:ok, Ecto.Schema.t()} | {:error, Ecto.Changeset.t()}
   @doc """
   Inserts a user into the database.
 
@@ -22,5 +21,4 @@ defmodule Exmoveit.Users.Create do
     |> Repo.insert()
   end
 
-  def call(_anything), do: "Enter the data in a map format"
 end
