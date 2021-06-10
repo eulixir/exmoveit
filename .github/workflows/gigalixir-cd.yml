@@ -3,7 +3,7 @@ name: CD
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   deploy:
     if: github.ref == 'refs/heads/main' # Only run this job if it is on the main branch
