@@ -1,4 +1,3 @@
-
 defmodule Exmoveit.Error do
   @keys [:status, :result]
 

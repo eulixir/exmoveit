@@ -19,11 +19,12 @@ defmodule ExmoveitWeb.Router do
   # you can use Plug.BasicAuth to set up some basic authentication
   # as long as you are also using SSL (which you should anyway).
   # if Mix.env() in [:dev, :test] do
-    import Phoenix.LiveDashboard.Router
+  import Phoenix.LiveDashboard.Router
 
-    scope "/" do
-      pipe_through [:fetch_session, :protect_from_forgery]
-      live_dashboard "/dashboard", metrics: ExmoveitWeb.Telemetry
-    end
+  scope "/" do
+    pipe_through [:fetch_session, :protect_from_forgery]
+    live_dashboard "/dashboard", metrics: ExmoveitWeb.Telemetry
+  end
+
   # end
 end

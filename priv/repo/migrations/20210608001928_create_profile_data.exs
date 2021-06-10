@@ -11,6 +11,5 @@ defmodule Exmoveit.Repo.Migrations.CreateProfileData do
       add :users_id, references(:users, type: :binary_id)
       timestamps()
     end
-
   end
 end
