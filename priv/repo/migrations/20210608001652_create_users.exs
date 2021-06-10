@@ -5,6 +5,8 @@ defmodule Exmoveit.Repo.Migrations.CreateUsers do
     create table(:users, primary_key: false) do
       add :id, :binary_id, primary_key: true
       add :email, :string
+      add :image, :string
+      add :name, :string
 
       timestamps()
     end

@@ -12,7 +12,7 @@ defmodule ExmoveitWeb.UsersController do
   @doc """
   Inserts an user into the database.
   """
-  def create(conn, %{"email" => _email} = user) do
+  def create(conn, %{"email" => _email, "name" => _name, "image" => _image} = user) do
     with {:ok, %User{} = user} <- Exmoveit.create_user(user) do
       conn
       |> put_status(:created)

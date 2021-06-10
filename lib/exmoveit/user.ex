@@ -4,8 +4,11 @@ defmodule Exmoveit.User do
 
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
+  @required_params [:email, :image, :name]
   schema "users" do
     field :email, :string
+    field :name, :string
+    field :image, :string
 
     timestamps()
   end
@@ -17,8 +20,8 @@ defmodule Exmoveit.User do
 
   def changeset(user, attrs) do
     user
-    |> cast(attrs, [:email])
-    |> validate_required([:email])
+    |> cast(attrs, @required_params)
+    |> validate_required(@required_params)
     |> unique_constraint(:email)
   end
 end
