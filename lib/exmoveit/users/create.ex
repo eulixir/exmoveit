@@ -3,7 +3,7 @@ defmodule Exmoveit.Users.Create do
     Inserts a user into the database.
   """
 
-  alias Exmoveit.{Repo, User}
+  alias Exmoveit.{Error, Repo, User}
 
   @spec call(%{email: String.t()}) ::
           {:error, %{status: :bad_request, result: Ecto.Changeset.t()}}
@@ -29,7 +29,7 @@ defmodule Exmoveit.Users.Create do
 
   defp handle_insert({:ok, %User{}} = user), do: user
 
-  defp handle_insert({:error, changeset}) do
-    {:error, %{status: :bad_request, result: changeset}}
+  defp handle_insert({:error, result}) do
+    {:error, Error.build(:bad_request, result)}
   end
 end

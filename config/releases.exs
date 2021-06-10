@@ -28,7 +28,7 @@ config :exmoveit, ExmoveitWeb.Endpoint,
     port: String.to_integer(System.get_env("PORT") || "4000"),
     transport_options: [socket_opts: [:inet6]]
   ],
-  url: [hostL System.get_env("APP_NAME") <> ".gigalixirapp.com", port: 443]
+  url: [host: System.get_env("APP_NAME") <> ".gigalixirapp.com", port: 443],
   secret_key_base: secret_key_base
 
 # ## Using releases (Elixir v1.9+)
@@ -36,7 +36,7 @@ config :exmoveit, ExmoveitWeb.Endpoint,
 # If you are doing OTP releases, you need to instruct Phoenix
 # to start each relevant endpoint:
 #
-    config :exmoveit, ExmoveitWeb.Endpoint, server: true
+config :exmoveit, ExmoveitWeb.Endpoint, server: true
 #
 # Then you can assemble a release by calling `mix release`.
 # See `mix help release` for more information.
