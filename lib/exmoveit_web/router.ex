@@ -7,6 +7,8 @@ defmodule ExmoveitWeb.Router do
 
   scope "/api", ExmoveitWeb do
     pipe_through :api
+
+    post "/users", UsersController, :create
   end
 
   # Enables LiveDashboard only for development
