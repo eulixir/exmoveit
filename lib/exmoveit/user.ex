@@ -2,9 +2,11 @@ defmodule Exmoveit.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  @derive {Jason.Encoder, only: [:id, :email, :name, :image]}
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
   @required_params [:email, :image, :name]
+
   schema "users" do
     field :email, :string
     field :name, :string

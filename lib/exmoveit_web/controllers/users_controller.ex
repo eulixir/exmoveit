@@ -8,7 +8,6 @@ defmodule ExmoveitWeb.UsersController do
 
   @spec create(Plug.Conn.t(), %{email: String.t(), image: String.t(), name: String.t()}) ::
           {:error, Error.build(:bad_request, Ecto.Changeset.t())}
-
           | {:ok, %User{}}
   @doc """
   Inserts an user into the database.

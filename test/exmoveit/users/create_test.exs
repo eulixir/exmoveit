@@ -3,13 +3,13 @@ defmodule Exmoveit.Users.CreateTest do
 
   import Exmoveit.Factory
 
-  alias Exmoveit.{Error, User, Users.Create}
+  alias Exmoveit.{Error, User}
 
   describe "call/1" do
     test "when all params are valid, returns the user" do
       params = build(:user_params)
 
-      response = Create.call(params)
+      response = Exmoveit.create_user(params)
 
       assert {:ok, %User{id: _id, name: "Jp", email: "jp@banana.com", image: "src/banana"}} =
                response
@@ -18,14 +18,14 @@ defmodule Exmoveit.Users.CreateTest do
     test "when there the email already registered, returns an error" do
       :user_params
       |> build()
-      |> Create.call()
+      |> Exmoveit.create_user()
 
       response =
         :user_params
         |> build()
-        |> Create.call()
+        |> Exmoveit.create_user()
 
-        assert {:error, %Error{}} = response
+      assert {:error, %Error{}} = response
 
       # assert {:error, %Error{status: :bad_request, result: changeset}} = response
       # assert errors_on(changeset) == expected_response
