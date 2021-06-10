@@ -19,6 +19,14 @@ defmodule Exmoveit.Users.Create do
     params
     |> User.changeset()
     |> Repo.insert()
+    |> handle_insert()
   end
 
+  def call(_anything), do: {:error, "Enter the data in a map format"}
+
+  defp handle_insert({:ok, %User{}} = user), do: user
+
+  defp handle_insert({:error, changeset}) do
+    {:error, %{status: :bad_request, result: changeset}}
+  end
 end
