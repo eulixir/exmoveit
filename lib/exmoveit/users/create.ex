@@ -5,6 +5,9 @@ defmodule Exmoveit.Users.Create do
 
   alias Exmoveit.{Repo, User}
 
+  @spec call(%{email: String.t()}) ::
+          {:error, %{status: :bad_request, result: Ecto.Changeset.t()}}
+          | {:ok, %User{}}
   @doc """
   Inserts a user into the database.
 
@@ -12,7 +15,7 @@ defmodule Exmoveit.Users.Create do
 
         iex> user_params = %{email: "mike@gmail.com"}
 
-        iex> {:ok, _struct} = Exmoveit.Users.Create.call(user_params)
+        iex> {:ok, %Exmoveit.User{}} = Exmoveit.Users.Create.call(user_params)
 
   """
   def call(%{} = params) do
