@@ -14,8 +14,8 @@ config :exmoveit, Exmoveit.Repo,
 
 if System.get_env("GITHUB_ACTIONS") do
   config :exmoveit, Exmoveit.Repo,
-    username: postgres,
-    password: postgres
+    username: "postgres",
+    password: "postgres"
 end
 
 # We don't run a server during test. If one is required,

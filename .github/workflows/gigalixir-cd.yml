@@ -6,7 +6,7 @@ on:
       - master
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/main' # Only run this job if it is on the main branch
+    if: github.ref == 'refs/heads/master' # Only run this job if it is on the main branch
     runs-on: ubuntu-latest
 
     steps:
