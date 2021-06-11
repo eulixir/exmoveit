@@ -16,6 +16,7 @@ defmodule ExmoveitWeb.ChannelCase do
   """
 
   use ExUnit.CaseTemplate
+  alias Ecto.Adapters.SQL.Sandbox
 
   using do
     quote do
@@ -29,10 +30,10 @@ defmodule ExmoveitWeb.ChannelCase do
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Exmoveit.Repo)
+    :ok = Sandbox.checkout(Exmoveit.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(Exmoveit.Repo, {:shared, self()})
+      Sandbox.mode(Exmoveit.Repo, {:shared, self()})
     end
 
     :ok

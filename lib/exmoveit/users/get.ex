@@ -1,4 +1,7 @@
 defmodule Exmoveit.Users.Get do
+   @moduledoc """
+    false
+  """
   alias Exmoveit.{Error, Repo, User}
 
   def get_all do

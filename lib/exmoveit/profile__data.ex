@@ -1,4 +1,7 @@
 defmodule Exmoveit.Profile_Data do
+  @moduledoc """
+    false
+  """
   use Ecto.Schema
   import Ecto.Changeset
 
@@ -17,7 +20,6 @@ defmodule Exmoveit.Profile_Data do
     timestamps()
   end
 
-  @doc false
   def changeset(profile__data, attrs) do
     profile__data
     |> cast(attrs, [:current_experience, :current_level, :tasks_completed])

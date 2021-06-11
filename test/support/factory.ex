@@ -1,4 +1,7 @@
 defmodule Exmoveit.Factory do
+  @moduledoc """
+    false
+  """
   use ExMachina.Ecto, repo: Exmoveit.Repo
 
   alias Exmoveit.User

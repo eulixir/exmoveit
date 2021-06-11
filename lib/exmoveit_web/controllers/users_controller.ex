@@ -6,12 +6,12 @@ defmodule ExmoveitWeb.UsersController do
 
   action_fallback FallbackController
 
-  @spec create(Plug.Conn.t(), %{email: String.t(), image: String.t(), name: String.t()}) ::
-          {:error, Error.build(:bad_request, Ecto.Changeset.t())}
-          | {:ok, %User{}}
-  @doc """
-  Inserts an user into the database.
-  """
+  # @spec create(Plug.Conn.t(), %{email: String.t(), image: String.t(), name: String.t()}) ::
+  #         {:error, Error.build(:bad_request, Ecto.Changeset.t())}
+  #         | {:ok, %User{}}
+  # @doc """
+  # Inserts an user into the database.
+  # """
   def create(conn, params) do
     with {:ok, %User{} = user} <- Exmoveit.create_user(params) do
       conn
