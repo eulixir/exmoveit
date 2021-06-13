@@ -1,4 +1,7 @@
 defmodule Exmoveit.Repo.Migrations.CreateUsers do
+  @moduledoc """
+  false
+  """
   use Ecto.Migration
 
   def change do

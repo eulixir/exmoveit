@@ -15,6 +15,7 @@ defmodule Exmoveit.User do
     field :name, :string
     field :image, :string
 
+
     timestamps()
   end
 
