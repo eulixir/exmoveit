@@ -18,13 +18,9 @@ defmodule Exmoveit.Users.Get do
 
   def by_email(email) do
     users = get_all()
-
-    users
-    |> Enum.find(fn map -> map.email == email end)
-    |> get_id()
-  end
-
-  def get_id(%{id: id}) do
-    id
+    case Enum.find(users, fn map -> map.email == email end) do
+      nil -> {:error, Error.build_user_not_found_error()}
+      email -> email.id
+    end
   end
 end
