@@ -21,7 +21,7 @@ defmodule ExmoveitWeb.UsersController do
   end
 
   def show_all(conn, _params) do
-    with users <- Exmoveit.get_all_users do
+    with users <- Exmoveit.get_all_users() do
       conn
       |> put_status(:ok)
       |> render("show_all_users.json", users: users)
@@ -39,6 +39,7 @@ defmodule ExmoveitWeb.UsersController do
   def by_email(conn, %{"email" => email}) do
     with id <- Exmoveit.get_user_by_email(email) do
       {:ok, user} = Exmoveit.get_user(id)
+
       conn
       |> put_status(:ok)
       |> render("show_user.json", user: user)

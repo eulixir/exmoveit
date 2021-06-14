@@ -16,7 +16,7 @@ defmodule ExmoveitWeb.Router do
     get "/users/get_all", UsersController, :show_all
 
     put "/profile_data", ProfileDataController, :update
-
+    get "/profile_data/:email", ProfileDataController, :show_by_email
   end
 
   # Enables LiveDashboard only for development

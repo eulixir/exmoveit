@@ -11,4 +11,12 @@ defmodule ExmoveitWeb.ProfileDataView do
       }
     }
   end
+
+  def render("show.json", %{profile_data: %ProfileData{} = profile_data}) do
+    %{
+      profile_data: %{
+        profile_data: profile_data
+      }
+    }
+  end
 end

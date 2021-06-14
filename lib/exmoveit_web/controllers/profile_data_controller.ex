@@ -17,4 +17,14 @@ defmodule ExmoveitWeb.ProfileDataController do
       |> render("update.json", profile_data: profile_data)
     end
   end
+
+  def show_by_email(conn, %{"email" => email}) do
+    with id <- Exmoveit.get_profile_id_by_email(email) do
+      {:ok, profile_data} = Exmoveit.get_profile_data(id)
+
+      conn
+      |> put_status(:created)
+      |> render("show.json", profile_data: profile_data)
+    end
+  end
 end

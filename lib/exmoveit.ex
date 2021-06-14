@@ -37,7 +37,6 @@ defmodule Exmoveit do
 
   defdelegate create_profile_data(params), to: ProfilesDataCreate, as: :call
   defdelegate get_profile_data(id), to: ProfilesDataGet, as: :by_id
-  defdelegate get_profile_id_by_email(id), to: ProfilesDataGet, as: :get_profile_id_by_email
+  defdelegate get_profile_id_by_email(email), to: ProfilesDataGet, as: :get_profile_id_by_email
   defdelegate update_profile_data(id), to: ProfilesDataUpdate, as: :call
-
 end
