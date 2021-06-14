@@ -32,8 +32,8 @@ defmodule Exmoveit do
   # defdelegate update_user(params), to: UsersUpdate, as: :call
   defdelegate get_all_users, to: UsersGet, as: :get_all
   defdelegate get_user(id), to: UsersGet, as: :by_id
+  defdelegate get_user_by_email(email), to: UsersGet, as: :by_email
 
   defdelegate create_profile_data(params), to: ProfilesDataCreate, as: :call
   defdelegate get_profile_data(id), to: ProfilesDataGet, as: :by_id
-
 end

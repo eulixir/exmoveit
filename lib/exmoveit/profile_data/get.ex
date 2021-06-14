@@ -1,4 +1,5 @@
 defmodule Exmoveit.ProfilesData.Get do
+  @moduledoc false
   alias Exmoveit.{Error, ProfileData, Repo}
 
   def by_id(id) do

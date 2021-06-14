@@ -1,5 +1,5 @@
 defmodule Exmoveit.Users.Get do
-   @moduledoc """
+  @moduledoc """
     false
   """
   alias Exmoveit.{Error, Repo, User}
@@ -14,5 +14,17 @@ defmodule Exmoveit.Users.Get do
       nil -> {:error, Error.build_user_not_found_error()}
       user -> {:ok, Repo.preload(user, [:profile_data])}
     end
+  end
+
+  def by_email(email) do
+    users = get_all()
+
+    users
+    |> Enum.find(fn map -> map.email == email end)
+    |> get_id()
+  end
+
+  def get_id(%{id: id}) do
+    id
   end
 end
