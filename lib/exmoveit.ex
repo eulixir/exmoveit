@@ -12,6 +12,9 @@ defmodule Exmoveit do
   alias Exmoveit.Users.Get, as: UsersGet
   # alias Exmoveit.Users.Update, as: UsersUpdate
 
+  alias Exmoveit.ProfilesData.Create, as: ProfilesDataCreate
+  alias Exmoveit.ProfilesData.Get, as: ProfilesDataGet
+
   @spec create_user(%{email: String.t()}) ::
           {:error, %{status: :bad_request, result: Ecto.Changeset.t()}}
           | {:ok, %User{}}
@@ -27,7 +30,10 @@ defmodule Exmoveit do
   """
   defdelegate create_user(params), to: UsersCreate, as: :call
   # defdelegate update_user(params), to: UsersUpdate, as: :call
-  defdelegate get_all, to: UsersGet, as: :get_all
+  defdelegate get_all_users, to: UsersGet, as: :get_all
   defdelegate get_user(id), to: UsersGet, as: :by_id
+
+  defdelegate create_profile_data(params), to: ProfilesDataCreate, as: :call
+  defdelegate get_profile_data(id), to: ProfilesDataGet, as: :by_id
 
 end
