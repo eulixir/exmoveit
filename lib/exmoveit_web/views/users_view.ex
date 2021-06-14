@@ -11,4 +11,6 @@ defmodule ExmoveitWeb.UsersView do
       }
     }
   end
+
+  def render("show_all_users.json", %{users: [%User{} | _tail] = users}), do: %{users: users}
 end
