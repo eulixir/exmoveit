@@ -44,6 +44,4 @@ defmodule ExmoveitWeb.UsersController do
       |> render("show_user.json", user: user)
     end
   end
-
-
 end

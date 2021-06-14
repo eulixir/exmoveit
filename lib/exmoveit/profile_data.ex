@@ -10,7 +10,7 @@ defmodule Exmoveit.ProfileData do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
 
-  @required_params [:user_id]
+  @required_params [:user_id, :current_experience, :current_level, :tasks_completed]
 
   schema "profile_data" do
     field :current_experience, :decimal, default: 0
