@@ -34,8 +34,8 @@ defmodule Exmoveit.UsersControllerTest do
       params = build(:user_params)
 
       conn
-        |> post(Routes.users_path(conn, :create, params))
-        |> json_response(:created)
+      |> post(Routes.users_path(conn, :create, params))
+      |> json_response(:created)
 
       response =
         conn

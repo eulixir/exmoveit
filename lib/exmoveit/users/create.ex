@@ -27,9 +27,14 @@ defmodule Exmoveit.Users.Create do
 
   def call(_anything), do: {:error, "Enter the data in a map format"}
 
-  defp handle_insert({:ok, %User{}} = user), do: user
-
   defp handle_insert({:error, result}) do
     {:error, Error.build(:bad_request, result)}
   end
+
+  defp handle_insert({:ok, %User{}} = user) do
+    user
+    |> tap(fn params -> create_profile_data(params) end)
+  end
+
+  defp create_profile_data({:ok, map}), do: Exmoveit.create_profile_data(%{user_id: map.id})
 end

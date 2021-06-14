@@ -17,5 +17,5 @@ defmodule Exmoveit.Error do
 
   def build_user_not_found_error, do: build(:not_found, "User not found")
   def build_profile_data_not_found_error, do: build(:not_found, "Profile data is not found")
-
+  def build_email_not_found_error, do: build(:not_found, "Email not found")
 end
