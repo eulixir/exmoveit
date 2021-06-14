@@ -4,7 +4,7 @@ defmodule Exmoveit.ProfilesData.Update do
   """
   alias Exmoveit.{ProfileData, Repo}
 
-  def call(%{email: email} = params) do
+  def call(%{"email" => email} = params) do
     case Exmoveit.get_profile_id_by_email(email) do
       {:error, reason} -> reason
       id -> id

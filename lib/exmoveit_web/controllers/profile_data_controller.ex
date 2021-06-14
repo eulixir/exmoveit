@@ -9,12 +9,12 @@ defmodule ExmoveitWeb.ProfileDataController do
   # @spec
   # false
   # """
-  def put(conn, %{"email" => email} = params) do
 
-    # with {:ok, %User{} = user} <- Exmoveit.create_user(params) do
-    #   conn
-    #   |> put_status(:created)
-    #   |> render("create.json", user: user)
-    # end
+  def update(conn, params) do
+    with {:ok, %ProfileData{} = profile_data} <- Exmoveit.update_profile_data(params) do
+      conn
+      |> put_status(:created)
+      |> render("update.json", profile_data: profile_data)
+    end
   end
 end

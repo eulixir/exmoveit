@@ -7,6 +7,7 @@ defmodule Exmoveit.ProfileData do
 
   alias Exmoveit.User
 
+  @derive {Jason.Encoder, only: [:user_id, :current_experience, :current_level, :tasks_completed, :id]}
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
 
