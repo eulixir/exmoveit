@@ -27,4 +27,13 @@ defmodule ExmoveitWeb.UsersController do
       |> render("show_all_users.json", users: users)
     end
   end
+
+  def by_id(conn, %{"id" => id}) do
+    with {:ok, %User{} = user} <- Exmoveit.get_user(id) do
+      conn
+      |> put_status(:ok)
+      |> render("show_by_id.json", user: user)
+    end
+  end
+
 end
