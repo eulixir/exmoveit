@@ -32,8 +32,18 @@ defmodule ExmoveitWeb.UsersController do
     with {:ok, %User{} = user} <- Exmoveit.get_user(id) do
       conn
       |> put_status(:ok)
-      |> render("show_by_id.json", user: user)
+      |> render("show_user.json", user: user)
     end
   end
+
+  def by_email(conn, %{"email" => email}) do
+    with id <- Exmoveit.get_user_by_email(email) do
+      {:ok, user} = Exmoveit.get_user(id)
+      conn
+      |> put_status(:ok)
+      |> render("show_user.json", user: user)
+    end
+  end
+
 
 end
