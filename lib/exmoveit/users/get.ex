@@ -12,7 +12,7 @@ defmodule Exmoveit.Users.Get do
   def by_id(id) do
     case Repo.get(User, id) do
       nil -> {:error, Error.build_user_not_found_error()}
-      user -> {:ok, user}
+      user -> {:ok, Repo.preload(user, [:profile_data])}
     end
   end
 end

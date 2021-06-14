@@ -5,6 +5,8 @@ defmodule Exmoveit.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias Exmoveit.ProfileData
+
   @derive {Jason.Encoder, only: [:id, :email, :name, :image]}
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
@@ -15,6 +17,7 @@ defmodule Exmoveit.User do
     field :name, :string
     field :image, :string
 
+    has_one :profile_data, ProfileData
 
     timestamps()
   end

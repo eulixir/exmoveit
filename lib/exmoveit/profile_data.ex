@@ -1,4 +1,4 @@
-defmodule Exmoveit.Profile_Data do
+defmodule Exmoveit.ProfileData do
   @moduledoc """
     false
   """
@@ -10,14 +10,14 @@ defmodule Exmoveit.Profile_Data do
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
 
-  @required_params [:current_experience, :current_level, :tasks_completed]
+  @required_params [:user_id]
 
   schema "profile_data" do
-    field :current_experience, :decimal
-    field :current_level, :integer
-    field :tasks_completed, :integer
+    field :current_experience, :decimal, default: 0
+    field :current_level, :integer, default: 0
+    field :tasks_completed, :integer, default: 0
 
-    belongs_to :users, User
+    belongs_to :user, User
 
     timestamps()
   end
@@ -26,9 +26,8 @@ defmodule Exmoveit.Profile_Data do
     changeset(%__MODULE__{}, attrs)
   end
 
-  def changeset(profile__data, attrs) do
-    profile__data
+  def changeset(profile_data, attrs) do
+    profile_data
     |> cast(attrs, @required_params)
-    |> validate_required(@required_params)
   end
 end

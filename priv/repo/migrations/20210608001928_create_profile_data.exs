@@ -4,11 +4,11 @@ defmodule Exmoveit.Repo.Migrations.CreateProfileData do
   def change do
     create table(:profile_data, primary_key: false) do
       add :id, :binary_id, primary_key: true
-      add :current_experience, :decimal
-      add :current_level, :integer
-      add :tasks_completed, :integer
+      add :current_experience, :decimal, default: 0
+      add :current_level, :integer, default: 0
+      add :tasks_completed, :integer, default: 0
 
-      add :users_id, references(:users, type: :binary_id)
+      add :user_id, references(:users, type: :binary_id)
       timestamps()
     end
   end
