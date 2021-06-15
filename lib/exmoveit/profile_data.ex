@@ -7,12 +7,10 @@ defmodule Exmoveit.ProfileData do
 
   alias Exmoveit.User
 
-  @derive {Jason.Encoder,
-           only: [:user_id, :current_experience, :current_level, :tasks_completed, :id]}
+  @required_params [:user_id, :current_experience, :current_level, :tasks_completed]
+  @derive {Jason.Encoder, only: @required_params ++ [:id, :user]}
   @primary_key {:id, :binary_id, autogenerate: true}
   @foreign_key_type :binary_id
-
-  @required_params [:user_id, :current_experience, :current_level, :tasks_completed]
 
   schema "profile_data" do
     field :current_experience, :integer, default: 0

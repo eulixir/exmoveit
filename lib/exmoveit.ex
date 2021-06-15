@@ -30,7 +30,6 @@ defmodule Exmoveit do
 
   """
   defdelegate create_user(params), to: UsersCreate, as: :call
-  # defdelegate update_user(params), to: UsersUpdate, as: :call
   defdelegate get_all_users, to: UsersGet, as: :get_all
   defdelegate get_user(id), to: UsersGet, as: :by_id
   defdelegate get_user_by_email(email), to: UsersGet, as: :by_email
