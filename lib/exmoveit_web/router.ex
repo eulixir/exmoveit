@@ -3,7 +3,7 @@ defmodule ExmoveitWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
-    plug CORSPlug, origin: ["http://localhost:3000/"]
+    plug CORSPlug, origin: ["http://localhost:3000/", "http://localhost:3000/pomodoro"]
   end
 
   scope "/api", ExmoveitWeb do
