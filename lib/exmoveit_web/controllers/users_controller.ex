@@ -22,7 +22,6 @@ defmodule ExmoveitWeb.UsersController do
 
   def show_all(conn, _params) do
     with users <- Exmoveit.get_all_users() do
-      IO.inspect(users)
       conn
       |> put_status(:ok)
       |> render("show_all_users.json", users: users)
