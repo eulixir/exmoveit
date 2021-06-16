@@ -10,14 +10,13 @@ defmodule Exmoveit.ProfileData do
   @required_params [:user_id, :current_experience, :current_level, :tasks_completed]
   @derive {Jason.Encoder, only: @required_params ++ [:id, :user]}
   @primary_key {:id, :binary_id, autogenerate: true}
-  @foreign_key_type :binary_id
 
   schema "profile_data" do
     field :current_experience, :integer, default: 0
     field :current_level, :integer, default: 1
     field :tasks_completed, :integer, default: 0
 
-    belongs_to :user, User
+    belongs_to :user, User, type: :binary_id
 
     timestamps()
   end

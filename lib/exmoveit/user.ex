@@ -9,7 +9,6 @@ defmodule Exmoveit.User do
 
   @derive {Jason.Encoder, only: [:id, :email, :name, :image]}
   @primary_key {:id, :binary_id, autogenerate: true}
-  @foreign_key_type :binary_id
   @required_params [:email, :image, :name]
 
   schema "users" do
@@ -18,7 +17,6 @@ defmodule Exmoveit.User do
     field :image, :string
 
     has_one :profile_data, ProfileData
-
     timestamps()
   end
 
