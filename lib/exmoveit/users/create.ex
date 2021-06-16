@@ -27,9 +27,21 @@ defmodule Exmoveit.Users.Create do
 
   def call(_anything), do: {:error, "Enter the data in a map format"}
 
-  defp handle_insert({:error, result}) do
-    {:error, Error.build(:bad_request, result)}
+  defp handle_insert(
+    {:error, error =
+      %{
+        errors:
+        [
+          email: {
+            "has already been taken", [constraint: :unique, constraint_name: "users_email_index"]
+          }
+        ]
+      }
+    }) do
+    {:error, Error.build(:ok, error)}
   end
+
+  defp handle_insert({:error, result}), do: {:error, Error.build(:bad_request, result)}
 
   defp handle_insert({:ok, %User{}} = user) do
     user
