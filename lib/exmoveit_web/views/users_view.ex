@@ -3,11 +3,13 @@ defmodule ExmoveitWeb.UsersView do
 
   def render("create.json", %{user: user}) do
     %{
-      id: user.id,
-      email: user.email,
-      name: user.name,
-      image: user.image,
-      message: "User created successfully"
+      message: "User created successfully",
+      user: %{
+        id: user.id,
+        email: user.email,
+        name: user.name,
+        image: user.image
+      }
     }
   end
 

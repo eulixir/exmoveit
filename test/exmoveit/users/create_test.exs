@@ -1,4 +1,5 @@
 defmodule Exmoveit.Users.CreateTest do
+  @moduledoc false
   use Exmoveit.DataCase, async: true
 
   import Exmoveit.Factory

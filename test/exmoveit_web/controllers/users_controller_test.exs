@@ -15,18 +15,16 @@ defmodule Exmoveit.UsersControllerTest do
         |> post(Routes.users_path(conn, :create, params))
         |> json_response(:created)
 
-      %{"user" => %{"user" => %{"id" => id}}} = response
+      %{"user" => %{"id" => id}} = response
 
       assert %{
+               "message" => "User created successfully",
                "user" => %{
-                 "user" => %{
-                   "name" => "Jp",
-                   "email" => "jp@banana.com",
-                   "image" => "src/banana",
-                   "id" => ^id
-                 }
-               },
-               "message" => "User created successfully"
+                 "email" => "jp@banana.com",
+                 "id" => ^id,
+                 "image" => "src/banana",
+                 "name" => "Jp"
+               }
              } = response
     end
 
