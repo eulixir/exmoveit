@@ -15,7 +15,7 @@ defmodule Exmoveit.Users.UpdateTest do
 
       {:ok, %User{email: email}} = user
 
-      updated_params = %{email: email, image: "src/banana_nanica"}
+      updated_params = %{"email" => email, "image" => "src/banana_nanica"}
 
       response = Exmoveit.update_user(updated_params)
 
@@ -24,7 +24,7 @@ defmodule Exmoveit.Users.UpdateTest do
     end
 
     test "when email not exist, returns an error" do
-      params = %{email: "jp@banana.com", image: "src/banana_nanica"}
+      params = %{"email" => "jp@banana.com", "image" => "src/banana_nanica"}
 
       response = Exmoveit.update_user(params)
 
