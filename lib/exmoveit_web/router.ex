@@ -14,6 +14,7 @@ defmodule ExmoveitWeb.Router do
     get "/users/get_by_id/:id", UsersController, :by_id
     get "/users/get_by_email/:email", UsersController, :by_email
     get "/users/get_all", UsersController, :show_all
+    put "/users", UsersController, :update
 
     put "/profile_data", ProfileDataController, :update
     get "/profile_data/:email", ProfileDataController, :show_by_email

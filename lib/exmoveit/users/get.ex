@@ -20,4 +20,11 @@ defmodule Exmoveit.Users.Get do
       email -> email.id
     end
   end
+
+  def fetch_by_email(email) do
+    case by_email(email) do
+      {:error, reason} -> {:error, reason}
+      id -> by_id(id)
+    end
+  end
 end

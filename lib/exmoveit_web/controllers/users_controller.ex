@@ -30,6 +30,7 @@ defmodule ExmoveitWeb.UsersController do
 
   def by_id(conn, %{"id" => id}) do
     with {:ok, %User{} = user} <- Exmoveit.get_user(id) do
+      IO.inspect(user)
       conn
       |> put_status(:ok)
       |> render("show_user.json", user: user)
@@ -44,6 +45,14 @@ defmodule ExmoveitWeb.UsersController do
         |> put_status(:ok)
         |> render("show_user.json", user: user)
       end
+    end
+  end
+
+  def update(conn, params) do
+    with {:ok, %User{} = user} <- Exmoveit.update_user(params) do
+      conn
+      |> put_status(:ok)
+      |> render("show_user.json", user: user)
     end
   end
 end

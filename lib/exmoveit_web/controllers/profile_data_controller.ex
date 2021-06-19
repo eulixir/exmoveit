@@ -11,6 +11,7 @@ defmodule ExmoveitWeb.ProfileDataController do
   # """
 
   def update(conn, params) do
+    IO.inspect(params)
     with {:ok, %ProfileData{} = profile_data} <- Exmoveit.update_profile_data(params) do
       conn
       |> put_status(:created)
