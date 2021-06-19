@@ -27,9 +27,6 @@ defmodule Exmoveit.Users.CreateTest do
         |> Exmoveit.create_user()
 
       assert {:error, %Error{}} = response
-
-      # assert {:error, %Error{status: :bad_request, result: changeset}} = response
-      # assert errors_on(changeset) == expected_response
     end
   end
 end

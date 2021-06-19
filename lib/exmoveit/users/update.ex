@@ -2,19 +2,18 @@ defmodule Exmoveit.Users.Update do
   @moduledoc """
   false
   """
-  alias Exmoveit.{Error, Repo, User}
+  alias Exmoveit.{Repo, User}
 
   def call(%{email: email} = params) do
-    id = Exmoveit.get_user_by_email(email)
-
-    case Repo.get(User, id) do
-      nil -> {:error, Error.build_user_not_found_error()}
-      user -> do_update(user, params)
+    case Exmoveit.get_user_by_email(email) do
+      {:error, reason} -> {:error, reason}
+      id -> do_update(id, params)
     end
   end
 
-  defp do_update(user, params) do
-    user
+  defp do_update(id, params) do
+    User
+    |> Repo.get(id)
     |> User.changeset(params)
     |> Repo.update()
   end

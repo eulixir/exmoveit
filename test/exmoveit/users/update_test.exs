@@ -28,7 +28,7 @@ defmodule Exmoveit.Users.UpdateTest do
 
       response = Exmoveit.update_user(params)
 
-      expected_response = "banana"
+      expected_response = {:error, %Error{result: "User not found", status: :not_found}}
 
       assert response == expected_response
     end
