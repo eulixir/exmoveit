@@ -18,6 +18,12 @@ if System.get_env("GITHUB_ACTIONS") do
     password: "postgres"
 end
 
+if System.get_env("CIRCLECI_ACTIONS") do
+  config :exmoveit, Exmoveit.Repo,
+    username: "postgres",
+    password: "postgres"
+end
+
 # We don't run a server during test. If one is required,
 # you can enable the server option below.
 config :exmoveit, ExmoveitWeb.Endpoint,
