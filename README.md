@@ -1,10 +1,10 @@
 # Exmoveit
 
 [![Build Status](https://github.com/phoenixframework/phoenix/workflows/CI/badge.svg)](https://github.com/joaopealves/exmoveit/actions/workflows/gigalixir-cd.yml/badge.svg)
-
-[![Coverage Status](https://coveralls.io/repos/github/joaopealves/exmoveit/badge.svg?branch=master)](https://coveralls.io/github/joaopealves/exmoveit?branch=master)
-
-[![Build Status](https://travis-ci.com/joaopealves/exmoveit.svg?branch=master)](https://travis-ci.com/joaopealves/exmoveit)
+[![Hex version badge](https://img.shields.io/hexpm/v/repo_example.svg)](https://hex.pm/packages/repo_example)
+[![License badge](https://img.shields.io/hexpm/l/repo_example.svg)](https://github.com/surgeventures/repo-example-elixir/blob/master/LICENSE.md)
+[![Build status badge](https://img.shields.io/circleci/project/github/surgeventures/repo-example-elixir/master.svg)](https://circleci.com/gh/surgeventures/repo-example-elixir/tree/master)
+[![Code coverage badge](https://img.shields.io/codecov/c/github/surgeventures/repo-example-elixir/master.svg)](https://codecov.io/gh/surgeventures/repo-example-elixir/branch/master)
 
 To start your Phoenix server:
 
