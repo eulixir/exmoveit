@@ -42,8 +42,8 @@ defmodule Exmoveit.Users.GetTest do
 
       assert [%User{email: "jp@banana.com", id: ^id, image: "src/banana", name: "Jp"}] = response
     end
-    test "When not have a user, return an enpity list" do
 
+    test "When not have a user, return an enpity list" do
       response = Exmoveit.get_all_users()
 
       assert [] == response
@@ -89,6 +89,7 @@ defmodule Exmoveit.Users.GetTest do
       assert {:ok, %User{id: ^id, name: "Jp", email: "jp@banana.com", image: "src/banana"}} =
                response
     end
+
     test "When email does not exist, return an error" do
       email = "jp@banana.com"
 
