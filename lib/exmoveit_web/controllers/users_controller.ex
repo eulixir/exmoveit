@@ -1,7 +1,7 @@
 defmodule ExmoveitWeb.UsersController do
   use ExmoveitWeb, :controller
 
-  alias Exmoveit.{User, Error}
+  alias Exmoveit.{Error, User}
   alias ExmoveitWeb.FallbackController
 
   action_fallback FallbackController
@@ -30,8 +30,6 @@ defmodule ExmoveitWeb.UsersController do
 
   def by_id(conn, %{"id" => id}) do
     with {:ok, %User{} = user} <- Exmoveit.get_user(id) do
-      IO.inspect(user)
-
       conn
       |> put_status(:ok)
       |> render("show_user.json", user: user)

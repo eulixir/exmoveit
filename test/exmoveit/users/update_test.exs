@@ -7,7 +7,7 @@ defmodule Exmoveit.Users.UpdateTest do
   alias Exmoveit.{Error, User}
 
   describe "call/1" do
-    test "when all params are valid, update the user" do
+    test "When all params are valid, update the user" do
       user =
         :user_params
         |> build()
@@ -23,7 +23,7 @@ defmodule Exmoveit.Users.UpdateTest do
                response
     end
 
-    test "when email not exist, returns an error" do
+    test "When email not exist, returns an error" do
       params = %{"email" => "jp@banana.com", "image" => "src/banana_nanica"}
 
       response = Exmoveit.update_user(params)

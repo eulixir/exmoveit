@@ -4,7 +4,7 @@ defmodule Exmoveit.Users.GetTest do
 
   import Exmoveit.Factory
 
-  alias Exmoveit.{Error, User, Repo}
+  alias Exmoveit.{Error, Repo, User}
 
   describe "by_id/1" do
     test "When id exist, returns the user" do
