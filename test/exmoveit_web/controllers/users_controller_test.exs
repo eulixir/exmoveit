@@ -114,9 +114,15 @@ defmodule Exmoveit.UsersControllerTest do
                  "email" => "jp@banana.com",
                  "id" => ^id,
                  "image" => "src/banana",
-                 "name" => "Jp"
+                 "name" => "Jp",
+                 "profile_data" => %{
+                   "current_experience" => 0,
+                   "current_level" => 1,
+                   "tasks_completed" => 0
+                 }
                }
-             } = response
+             } =
+               response
     end
 
     test "When id not exist, return an error", %{conn: conn} do
@@ -132,7 +138,7 @@ defmodule Exmoveit.UsersControllerTest do
   end
 
   describe "by_email/1" do
-    test "When id existis, return the user", %{conn: conn} do
+    test "When email existis, return the user", %{conn: conn} do
       {:ok, user} =
         :user_params
         |> build()
@@ -151,7 +157,12 @@ defmodule Exmoveit.UsersControllerTest do
                  "email" => "jp@banana.com",
                  "id" => ^id,
                  "image" => "src/banana",
-                 "name" => "Jp"
+                 "name" => "Jp",
+                 "profile_data" => %{
+                   "current_experience" => 0,
+                   "current_level" => 1,
+                   "tasks_completed" => 0
+                 }
                }
              } = response
     end
@@ -170,10 +181,8 @@ defmodule Exmoveit.UsersControllerTest do
 
   describe "update/1" do
     test "When id existis, return the user", %{conn: conn} do
-      {:ok, user} =
-        :user_params
-        |> build()
-        |> Exmoveit.create_user()
+      params = %{email: "jp@banana.com", name: "Jp", image: "src/banana"}
+      {:ok, user} = Exmoveit.create_user(params)
 
       id = user.id
       email = user.email
@@ -190,7 +199,12 @@ defmodule Exmoveit.UsersControllerTest do
                  "email" => "jp@banana.com",
                  "id" => ^id,
                  "image" => "src/banana.jpeg",
-                 "name" => "Jp"
+                 "name" => "Jp",
+                 "profile_data" => %{
+                   "current_experience" => 0,
+                   "current_level" => 1,
+                   "tasks_completed" => 0
+                 }
                }
              } = response
     end

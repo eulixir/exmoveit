@@ -45,23 +45,21 @@ defmodule ExmoveitWeb.UsersViewWeb do
   end
 
   test "Renders show_user.json" do
-    {:ok, user} =
-      :user
-      |> build()
-      |> Repo.insert()
+    params = %{email: "jp@banana.com", name: "Jp", image: "src/banana"}
+    {:ok, user} = Exmoveit.create_user(params)
 
     id = user.id
 
     {:ok, user} = Exmoveit.get_user(id)
 
     response = render(UsersView, "show_user.json", user: user)
-
     assert %{
-             user: %Exmoveit.User{
+             user: %{
                email: "jp@banana.com",
                id: ^id,
                image: "src/banana",
-               name: "Jp"
+               name: "Jp",
+               profile_data: %{current_experience: 0, current_level: 1, tasks_completed: 0}
              }
            } = response
   end

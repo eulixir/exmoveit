@@ -15,5 +15,19 @@ defmodule ExmoveitWeb.UsersView do
 
   def render("show_all_users.json", %{users: users}), do: %{users: users}
 
-  def render("show_user.json", %{user: user}), do: %{user: user}
+  def render("show_user.json", %{user: user}) do
+    %{
+      user: %{
+        name: user.name,
+        email: user.email,
+        image: user.image,
+        id: user.id,
+        profile_data: %{
+          current_level: user.profile_data.current_level,
+          current_experience: user.profile_data.current_experience,
+          tasks_completed: user.profile_data.tasks_completed
+        }
+      }
+    }
+  end
 end

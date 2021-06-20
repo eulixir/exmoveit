@@ -1,7 +1,7 @@
 defmodule ExmoveitWeb.UsersController do
   use ExmoveitWeb, :controller
 
-  alias Exmoveit.{Error, User}
+  alias Exmoveit.User
   alias ExmoveitWeb.FallbackController
 
   action_fallback FallbackController
@@ -37,16 +37,10 @@ defmodule ExmoveitWeb.UsersController do
   end
 
   def by_email(conn, %{"email" => email}) do
-    case Exmoveit.get_user_by_email(email) do
-      {:error, _error} ->
-        {:error, Error.build_user_not_found_error()}
-
-      id ->
-        with {:ok, %User{} = user} <- Exmoveit.get_user(id) do
-          conn
-          |> put_status(:ok)
-          |> render("show_user.json", user: user)
-        end
+    with {:ok, %User{} = user} <- Exmoveit.fetch_by_email(email) do
+      conn
+      |> put_status(:ok)
+      |> render("show_user.json", user: user)
     end
   end
 
