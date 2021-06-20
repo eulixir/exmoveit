@@ -157,7 +157,7 @@ defmodule Exmoveit.UsersControllerTest do
     end
 
     test "When id not exist, return an error", %{conn: conn} do
-     email = "jp@banana.com"
+      email = "jp@banana.com"
 
       response =
         conn
@@ -178,7 +178,7 @@ defmodule Exmoveit.UsersControllerTest do
       id = user.id
       email = user.email
 
-      updated_params = %{email: email, image: "src/banana.jpeg" }
+      updated_params = %{email: email, image: "src/banana.jpeg"}
 
       response =
         conn
@@ -196,7 +196,7 @@ defmodule Exmoveit.UsersControllerTest do
     end
 
     test "When id not exist, return an error", %{conn: conn} do
-      updated_params = %{email: "jp@banana.com", image: "src/banana.jpeg" }
+      updated_params = %{email: "jp@banana.com", image: "src/banana.jpeg"}
 
       response =
         conn
