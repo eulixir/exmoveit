@@ -1,14 +1,20 @@
 defmodule Exmoveit.MixProject do
   use Mix.Project
 
+  @github_url "https://github.com/joaopealves/exmoveit"
+
   def project do
     [
       app: :exmoveit,
       version: "0.1.0",
       elixir: "~> 1.7",
+      name: "Moveit",
+      description: "An example open source Elixir application.",
       elixirc_paths: elixirc_paths(Mix.env()),
       compilers: [:phoenix, :gettext] ++ Mix.compilers(),
       start_permanent: Mix.env() == :prod,
+      source_url: @github_url,
+      homepage_url: @github_url,
       aliases: aliases(),
       deps: deps(),
       test_coverage: [tool: ExCoveralls],
@@ -17,6 +23,13 @@ defmodule Exmoveit.MixProject do
         "coveralls.detail": :test,
         "coveralls.post": :test,
         "coveralls.html": :test
+      ],
+      package: [
+        maintainers: ["Karol Słuszniak"],
+        licenses: ["MIT"],
+        links: %{
+          "GitHub" => @github_url,
+        }
       ]
     ]
   end

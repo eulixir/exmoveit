@@ -4,6 +4,8 @@
 
 [![Coverage Status](https://coveralls.io/repos/github/joaopealves/exmoveit/badge.svg?branch=master)](https://coveralls.io/github/joaopealves/exmoveit?branch=master)
 
+[![Build Status](https://travis-ci.com/joaopealves/exmoveit.svg?branch=master)](https://travis-ci.com/joaopealves/exmoveit)
+
 To start your Phoenix server:
 
 - Install dependencies with `mix deps.get`
