@@ -16,12 +16,12 @@
 
 <p align="center">
   <a href="#techs">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#libs">Libs</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#project">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#how-use">Como usar</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#mit">Licença</a>
 </p>
 &nbsp;&nbsp;&nbsp;
-
 <div id="techs"></div>
 
 ## ✨ Tecnologias
@@ -30,9 +30,9 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [Elixix](https://elixir-lang.org/)
 - [Phoenix](https://phoenixframework.org/)
-
 </div>
-&nbsp;&nbsp;&nbsp;
+
+<div id="libs"></div>
 
 ### 📚 Libs
 
