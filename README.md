@@ -98,3 +98,7 @@ Backend do projeto [moveit](https://github.com/joaopealves/moveit), uma aplicaç
 ## 📄 Licença
 
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+
+### Features
+
+- Adicionar query para retornar os melhores moviters
