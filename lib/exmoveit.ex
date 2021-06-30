@@ -29,15 +29,15 @@ defmodule Exmoveit do
         iex> {:ok, %Exmoveit.User{}} = Exmoveit.create_user(user_params)
 
   """
+  defdelegate fetch_by_email(email), to: UsersGet, as: :fetch_by_email
+  defdelegate get_user_by_email(email), to: UsersGet, as: :by_email
   defdelegate create_user(params), to: UsersCreate, as: :call
+  defdelegate update_user(params), to: UsersUpdate, as: :call
   defdelegate get_all_users, to: UsersGet, as: :get_all
   defdelegate get_user(id), to: UsersGet, as: :by_id
-  defdelegate get_user_by_email(email), to: UsersGet, as: :by_email
-  defdelegate update_user(params), to: UsersUpdate, as: :call
-  defdelegate fetch_by_email(email), to: UsersGet, as: :fetch_by_email
 
-  defdelegate create_profile_data(params), to: ProfilesDataCreate, as: :call
-  defdelegate get_profile_data(id), to: ProfilesDataGet, as: :by_id
   defdelegate get_profile_id_by_email(email), to: ProfilesDataGet, as: :get_profile_id_by_email
+  defdelegate create_profile_data(params), to: ProfilesDataCreate, as: :call
   defdelegate update_profile_data(id), to: ProfilesDataUpdate, as: :call
+  defdelegate get_profile_data(id), to: ProfilesDataGet, as: :by_id
 end
