@@ -101,4 +101,4 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 
 ### Features
 
-- Adicionar query para retornar os melhores moviters
+- Adicionar query para retornar os melhores moviters 🔨
