@@ -3,7 +3,7 @@ defmodule ExmoveitWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
-    plug CORSPlug, origin: ["http://localhost:3000/", "http://localhost:3000/pomodoro"]
+    plug CORSPlug, origin: ["http://localhost:3000/"]
   end
 
   scope "/api", ExmoveitWeb do
@@ -34,6 +34,4 @@ defmodule ExmoveitWeb.Router do
     pipe_through [:fetch_session, :protect_from_forgery]
     live_dashboard "/dashboard", metrics: ExmoveitWeb.Telemetry
   end
-
-  # end
 end
