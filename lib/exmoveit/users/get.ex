@@ -4,7 +4,7 @@ defmodule Exmoveit.Users.Get do
   """
   alias Exmoveit.{Error, Repo, User}
 
-  def get_all, do: Repo.all(User)
+  def get_all, do: Repo.preload(Repo.all(User), [:profile_data])
 
   def by_id(id) do
     case Repo.get(User, id) do
