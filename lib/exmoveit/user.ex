@@ -7,7 +7,7 @@ defmodule Exmoveit.User do
 
   alias Exmoveit.ProfileData
 
-  @derive {Jason.Encoder, only: [:id, :email, :name, :image]}
+  @derive {Jason.Encoder, only: [:id, :email, :name, :image, :profile_data]}
   @primary_key {:id, :binary_id, autogenerate: true}
   @required_params [:email, :image, :name]
 
@@ -20,7 +20,6 @@ defmodule Exmoveit.User do
     timestamps()
   end
 
-  @doc false
   def changeset(%{} = attrs) do
     changeset(%__MODULE__{}, attrs)
   end
@@ -28,6 +27,7 @@ defmodule Exmoveit.User do
   def changeset(user, attrs) do
     user
     |> cast(attrs, @required_params)
+    |> cast_assoc(:profile_data)
     |> validate_required(@required_params)
     |> unique_constraint(:email)
   end

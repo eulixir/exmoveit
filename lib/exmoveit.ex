@@ -12,6 +12,8 @@ defmodule Exmoveit do
   alias Exmoveit.Users.Get, as: UsersGet
   alias Exmoveit.Users.Update, as: UsersUpdate
 
+  alias Exmoveit.Users.Leaderboard, as: Leaderboard
+
   alias Exmoveit.ProfilesData.Create, as: ProfilesDataCreate
   alias Exmoveit.ProfilesData.Get, as: ProfilesDataGet
   alias Exmoveit.ProfilesData.Update, as: ProfilesDataUpdate
@@ -35,6 +37,7 @@ defmodule Exmoveit do
   defdelegate update_user(params), to: UsersUpdate, as: :call
   defdelegate get_all_users, to: UsersGet, as: :get_all
   defdelegate get_user(id), to: UsersGet, as: :by_id
+  defdelegate leaderboard, to: Leaderboard, as: :call
 
   defdelegate get_profile_id_by_email(email), to: ProfilesDataGet, as: :get_profile_id_by_email
   defdelegate create_profile_data(params), to: ProfilesDataCreate, as: :call

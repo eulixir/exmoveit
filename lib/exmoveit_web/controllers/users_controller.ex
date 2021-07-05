@@ -51,4 +51,12 @@ defmodule ExmoveitWeb.UsersController do
       |> render("show_user.json", user: user)
     end
   end
+
+  def leaderboard(conn, _params) do
+    with best_moviters <- Exmoveit.leaderboard do
+      conn
+      |> put_status(:ok)
+      |> render("show_best_moviters.json", best_moviters: best_moviters)
+    end
+  end
 end

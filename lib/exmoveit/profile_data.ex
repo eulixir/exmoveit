@@ -8,7 +8,7 @@ defmodule Exmoveit.ProfileData do
   alias Exmoveit.User
 
   @required_params [:user_id, :current_experience, :current_level, :tasks_completed]
-  @derive {Jason.Encoder, only: @required_params ++ [:id, :user]}
+  @derive {Jason.Encoder, only: @required_params ++ [:id]}
   @primary_key {:id, :binary_id, autogenerate: true}
 
   schema "profile_data" do
