@@ -7,7 +7,7 @@ defmodule Exmoveit.User do
 
   alias Exmoveit.ProfileData
 
-  @derive {Jason.Encoder, only: [:id, :email, :name, :image, :profile_data]}
+  @derive {Jason.Encoder, only: [:id, :email, :name, :image]}
   @primary_key {:id, :binary_id, autogenerate: true}
   @required_params [:email, :image, :name]
 

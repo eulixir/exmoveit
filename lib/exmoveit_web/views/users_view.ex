@@ -30,9 +30,6 @@ defmodule ExmoveitWeb.UsersView do
       }
     }
   end
-  def render("show_best_moviters.json", %{best_moviters: best_moviters}) do
-    IO.inspect("banana")
-    IO.inspect(best_moviters)
-    %{best_moviters: best_moviters}
-  end
+  def render("show_best_moviters.json", %{best_moviters: best_moviters}), do: %{best_moviters: best_moviters}
+
 end

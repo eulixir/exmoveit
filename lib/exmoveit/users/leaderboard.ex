@@ -10,6 +10,9 @@ defmodule Exmoveit.Users.Leaderboard do
            order_by: [desc: [p.current_level, p.tasks_completed, p.current_experience]],
            preload: [profile_data: p]
 
-    Repo.all(query)
+    best_moviters = Repo.all(query)
+    best_moviters = Enum.map(best_moviters, fn x -> Map.put(x, :banana, 1..10) end)
+    # IO.inspect(banana)
+    best_moviters
   end
 end
