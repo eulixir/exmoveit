@@ -30,6 +30,7 @@ defmodule ExmoveitWeb.UsersView do
       }
     }
   end
-  def render("show_best_moviters.json", %{best_moviters: best_moviters}), do: %{best_moviters: best_moviters}
 
+  def render("show_best_moviters.json", %{best_moviters: best_moviters}),
+    do: %{best_moviters: best_moviters}
 end

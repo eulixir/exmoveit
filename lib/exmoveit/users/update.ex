@@ -17,6 +17,5 @@ defmodule Exmoveit.Users.Update do
     |> Repo.preload([:profile_data])
     |> User.changeset(params)
     |> Repo.update()
-
   end
 end

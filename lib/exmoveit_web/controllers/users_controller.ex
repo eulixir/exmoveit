@@ -53,7 +53,7 @@ defmodule ExmoveitWeb.UsersController do
   end
 
   def leaderboard(conn, _params) do
-    with best_moviters <- Exmoveit.leaderboard do
+    with best_moviters <- Exmoveit.leaderboard() do
       conn
       |> put_status(:ok)
       |> render("show_best_moviters.json", best_moviters: best_moviters)

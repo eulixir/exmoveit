@@ -53,6 +53,7 @@ defmodule ExmoveitWeb.UsersViewWeb do
     {:ok, user} = Exmoveit.get_user(id)
 
     response = render(UsersView, "show_user.json", user: user)
+
     assert %{
              user: %{
                email: "jp@banana.com",

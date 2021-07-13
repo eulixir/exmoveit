@@ -121,8 +121,7 @@ defmodule Exmoveit.UsersControllerTest do
                    "tasks_completed" => 0
                  }
                }
-             } =
-               response
+             } = response
     end
 
     test "When id not exist, return an error", %{conn: conn} do
