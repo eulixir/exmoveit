@@ -57,6 +57,12 @@ jobs:
           key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
           restore-keys: ${{ runner.os }}-mix-
 
+      - name: Install dependencies
+        run: mix deps.get
+
+      - name: Run tests
+        run: mix test
+
       - name: Check Formatting
         run: mix format --check-formatted
 
@@ -72,9 +78,3 @@ jobs:
         run: bash <(curl -s https://codecov.io/bash)
         env:
           CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
-      - name: Install dependencies
-        run: mix deps.get
-
-      - name: Run tests
-        run: mix test
