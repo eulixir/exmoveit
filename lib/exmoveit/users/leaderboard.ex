@@ -1,4 +1,7 @@
 defmodule Exmoveit.Users.Leaderboard do
+  @moduledoc """
+  false
+  """
   import Ecto.Query
 
   alias Exmoveit.{Repo, User}
