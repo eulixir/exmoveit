@@ -27,3 +27,12 @@ jobs:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           MIGRATIONS: false # defaults to true
 
+      - name: Check coverage
+        run: mix coveralls.json
+        env:
+          MIX_ENV: test
+
+      - name: Install dependencies
+        run: mix deps.get
+      - name: run tests
+        run: mix test
