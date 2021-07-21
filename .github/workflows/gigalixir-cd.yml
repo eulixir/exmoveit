@@ -79,8 +79,3 @@ jobs:
           GIGALIXIR_APP: ${{ secrets.GIGALIXIR_APP }}
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           MIGRATIONS: false # defaults to true
-
-      - name: Install dependencies
-        run: mix deps.get
-      - name: run tests
-        run: mix test
