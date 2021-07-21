@@ -32,6 +32,11 @@ jobs:
         env:
           MIX_ENV: test
 
+      - name: Run codecov
+        run: bash <(curl -s http://codecov.io/bash)
+        env:
+          CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
       - name: Install dependencies
         run: mix deps.get
       - name: run tests
