@@ -16,7 +16,6 @@ defmodule Exmoveit.Users.Leaderboard do
 
     best_moviters = Repo.all(query)
     best_moviters = Enum.map(best_moviters, fn x -> Map.put(x, :banana, 1..10) end)
-    # IO.inspect(banana)
     best_moviters
   end
 end
