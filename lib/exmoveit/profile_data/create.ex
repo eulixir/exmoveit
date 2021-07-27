@@ -6,11 +6,12 @@ defmodule Exmoveit.ProfilesData.Create do
 
   alias Exmoveit.{Error, ProfileData, Repo}
 
-  def call(%{} = params) do
+  def call(%{user_id: _user_id} = params) do
     params
     |> ProfileData.changeset()
     |> Repo.insert()
     |> handle_insert()
+    |> IO.inspect()
   end
 
   def call(_anything), do: {:error, "Enter the data in a map format"}
