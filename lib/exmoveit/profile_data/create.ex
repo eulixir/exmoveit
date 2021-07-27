@@ -11,7 +11,6 @@ defmodule Exmoveit.ProfilesData.Create do
     |> ProfileData.changeset()
     |> Repo.insert()
     |> handle_insert()
-    |> IO.inspect()
   end
 
   def call(_anything), do: {:error, "Enter the data in a map format"}

@@ -15,13 +15,12 @@ defmodule Exmoveit.ProfileData.CreateTest do
       {:ok, response} = Exmoveit.create_profile_data(%{user_id: id})
 
       assert %Exmoveit.ProfileData{
-                id: _id,
-                current_experience: 0,
-                current_level: 1,
-                tasks_completed: 0,
-                user_id: _user_id
-              } =
-               response
+               id: _id,
+               current_experience: 0,
+               current_level: 1,
+               tasks_completed: 0,
+               user_id: _user_id
+             } = response
     end
 
     test "When there the email already registered, returns an error" do
