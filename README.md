@@ -80,7 +80,7 @@ Backend do projeto [moveit](https://github.com/joaopealves/moveit), uma aplicaç
 
 </br>
 
-### 🛑 Obs
+## 🛑 Obs
 
 &nbsp;
 
@@ -99,3 +99,5 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 ### Features
 
 - Adicionar query para retornar os melhores moviters ✅
+- Adicionar query para mostrar a posição atual do moviter
+
