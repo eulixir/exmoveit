@@ -12,7 +12,6 @@
 &nbsp;
 <p align="center"><img src="https://www.vectorlogo.zone/logos/elixir-lang/elixir-lang-ar21.svg"/></p>
 
-&nbsp;
 
 <p align="center">
   <a href="#techs">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -42,8 +41,6 @@ As libs que foram utilizadas nesse projeto
 - [Excoveralls](https://hexdocs.pm/excoveralls/readme.html)
 - [Credo](https://github.com/rrrene/credo)
 - [Ex_machina](https://hexdocs.pm/ex_machina/readme.html)
-
-&nbsp;&nbsp;&nbsp;
 
 <div id="project"></div>
 
