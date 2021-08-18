@@ -7,7 +7,7 @@ defmodule Exmoveit.Users.CreateTest do
   alias Exmoveit.{Error, User}
 
   describe "call/1" do
-    test "When all params are valid, returns the user" do
+    test "When all params are valid, creates the user" do
       params = build(:user_params)
 
       response = Exmoveit.create_user(params)

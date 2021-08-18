@@ -10,14 +10,15 @@ defmodule Exmoveit.ProfilesData.Get do
   end
 
   def get_profile_id_by_email(email) do
+
     case Exmoveit.get_user_by_email(email) do
       {:error, reason} ->
         reason
 
-      id ->
-        id
-        |> Exmoveit.get_user()
-        |> fetch_profile_data()
+        id ->
+          id
+          |> Exmoveit.get_user()
+          |> fetch_profile_data()
     end
   end
 

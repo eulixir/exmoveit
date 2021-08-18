@@ -14,11 +14,9 @@ defmodule Exmoveit.Users.Get do
   end
 
   def by_email(email) do
-    users = get_all()
-
-    case Enum.find(users, fn map -> map.email == email end) do
+    case Repo.get_by(User, email: email) do
       nil -> {:error, Error.build_user_not_found_error()}
-      email -> email.id
+      %User{} = user -> user.id
     end
   end
 
