@@ -4,7 +4,7 @@ defmodule Exmoveit.ProfileData.GetTest do
 
   import Exmoveit.Factory
 
-  alias Exmoveit.{User, ProfileData}
+  alias Exmoveit.{ProfileData, User}
 
   describe "by_id/1" do
     test "When id exists, return the profile data of the user" do
