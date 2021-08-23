@@ -7,7 +7,7 @@ defmodule Exmoveit.ProfileData.CreateTest do
   alias Exmoveit.{Error, User}
 
   describe "call/1" do
-    test "When id exist, create the profile data" do
+    test "When id exists, create the profile data" do
       params = build(:user_params)
 
       {:ok, %User{id: id}} = Exmoveit.create_user(params)
@@ -23,7 +23,7 @@ defmodule Exmoveit.ProfileData.CreateTest do
              } = response
     end
 
-    test "When there the email already registered, returns an error" do
+    test "When the email already registered, returns an error" do
       :user_params
       |> build()
       |> Exmoveit.create_user()
