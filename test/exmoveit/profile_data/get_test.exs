@@ -10,8 +10,8 @@ defmodule Exmoveit.ProfileData.GetTest do
     test "When id exists, return the profile data of the user" do
       {:ok, %User{id: user_id}} =
         :user_params
-      |> build()
-      |> Exmoveit.create_user()
+        |> build()
+        |> Exmoveit.create_user()
 
       {:ok, %User{profile_data: %{id: id}}} = Exmoveit.get_user(user_id)
 
@@ -29,7 +29,8 @@ defmodule Exmoveit.ProfileData.GetTest do
     test "When does't exists, return an error" do
       response = Exmoveit.get_profile_data("1d84af18-1ac0-4ee8-b238-c4d523e379a9")
 
-      assert {:error, %Exmoveit.Error{result: "Profile data is not found", status: :not_found}} == response
+      assert {:error, %Exmoveit.Error{result: "Profile data is not found", status: :not_found}} ==
+               response
     end
   end
 
@@ -37,8 +38,9 @@ defmodule Exmoveit.ProfileData.GetTest do
     test "When email exists, return the id" do
       {:ok, %User{email: email}} =
         :user_params
-      |> build()
-      |> Exmoveit.create_user()
+        |> build()
+        |> Exmoveit.create_user()
+
       response = Exmoveit.get_profile_id_by_email(email)
 
       {:ok, %ProfileData{id: id}} = Exmoveit.get_profile_data(response)
