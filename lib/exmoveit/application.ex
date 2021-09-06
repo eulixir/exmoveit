@@ -7,16 +7,10 @@ defmodule Exmoveit.Application do
 
   def start(_type, _args) do
     children = [
-      # Start the Ecto repository
       Exmoveit.Repo,
-      # Start the Telemetry supervisor
       ExmoveitWeb.Telemetry,
-      # Start the PubSub system
       {Phoenix.PubSub, name: Exmoveit.PubSub},
-      # Start the Endpoint (http/https)
       ExmoveitWeb.Endpoint
-      # Start a worker by calling: Exmoveit.Worker.start_link(arg)
-      # {Exmoveit.Worker, arg}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
