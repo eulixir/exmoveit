@@ -1,6 +1,6 @@
 defmodule Exmoveit.ProfileData do
   @moduledoc """
-    false
+    Schema for profile data
   """
   use Ecto.Schema
   import Ecto.Changeset

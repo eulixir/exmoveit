@@ -1,6 +1,6 @@
 defmodule Exmoveit.User do
   @moduledoc """
-    false
+    Schema for User
   """
   use Ecto.Schema
   import Ecto.Changeset
