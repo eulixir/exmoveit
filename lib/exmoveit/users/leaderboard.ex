@@ -1,6 +1,6 @@
 defmodule Exmoveit.Users.Leaderboard do
   @moduledoc """
-  false
+    Query for list best moviters
   """
   import Ecto.Query
 

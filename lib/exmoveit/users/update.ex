@@ -1,6 +1,6 @@
 defmodule Exmoveit.Users.Update do
   @moduledoc """
-  false
+    Update a user
   """
   alias Exmoveit.{Repo, User}
 
