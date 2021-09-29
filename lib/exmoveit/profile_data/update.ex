@@ -1,6 +1,6 @@
 defmodule Exmoveit.ProfilesData.Update do
   @moduledoc """
-  false
+    Update profile data
   """
   alias Exmoveit.{ProfileData, Repo}
 

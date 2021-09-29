@@ -1,7 +1,6 @@
 defmodule Exmoveit.ProfilesData.Create do
   @moduledoc """
     Inserts a data profile into the database.
-
   """
 
   alias Exmoveit.{Error, ProfileData, Repo}

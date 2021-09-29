@@ -1,5 +1,7 @@
 defmodule Exmoveit.ProfilesData.Get do
-  @moduledoc false
+  @moduledoc """
+    Get a status from the user
+  """
   alias Exmoveit.{Error, ProfileData, Repo}
 
   def by_id(id) do
