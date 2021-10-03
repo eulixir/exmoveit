@@ -12,7 +12,6 @@
 &nbsp;
 <p align="center"><img src="https://www.vectorlogo.zone/logos/elixir-lang/elixir-lang-ar21.svg"/></p>
 
-
 <p align="center">
   <a href="#techs">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
   <a href="#libs">Libs</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -52,14 +51,14 @@ Backend do projeto [moveit](https://github.com/joaopealves/moveit), uma aplicaç
 
 ## 🚀 Como executar
 
-## Install Inmana
+## Install Exmoveit
 
     --Open terminal--
 
     #Clone repo from github
     git clone https://github.com/joaopealves/exmoveit
 
-    #Entry in Inmana folder
+    #Entry in Exmoveit folder
     cd exmoveit
 
     #Install deps
@@ -100,4 +99,3 @@ Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para
 
 - Adicionar query para retornar os melhores moviters ✅
 - Adicionar query para mostrar a posição atual do moviter
-
