@@ -74,7 +74,7 @@ Backend do projeto [moveit](https://github.com/joaopealves/moveit), uma aplicaç
     #Open Phoenix server
     mix phx.server
 
-    #Exec test
+    #If you want to run tests
     mix test
 
 </br>
