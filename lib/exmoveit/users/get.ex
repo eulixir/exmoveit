@@ -1,5 +1,5 @@
 defmodule Exmoveit.Users.Get do
-    @moduledoc """
+  @moduledoc """
     Get a user from database.
   """
   alias Exmoveit.{Error, Repo, User}
