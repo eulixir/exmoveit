@@ -64,8 +64,7 @@ Backend do projeto [moveit](https://github.com/joaopealves/moveit), uma aplicaç
     #Install deps
     mix deps.get
 
-    #if your postgresql is installed correctly, type
-    #Create Database and migrations
+    #Create Database setup
     mix ecto.setup
 
     #Open interactive terminal
