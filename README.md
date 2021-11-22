@@ -1,5 +1,7 @@
 # Exmoveit
 
+Backend do projeto moveit desenvolvido na Rocketseat durante a NLW. O frontend está disponível [aqui](https://github.com/joaopealves/moveit)
+
 <div align="center">
 
 [![Hex version badge](https://img.shields.io/hexpm/v/repo_example.svg)](https://hex.pm/packages/repo_example)
